@@ -6,5 +6,13 @@
     "category": "General",
     "excerpt": "Welcome to my homepage, content comming soon.",
     "content": "posts/welcome.html"
+  },
+  {
+    "id": "hvorfor-bitcoin",
+    "title": "Hvorfor Bitcoin",
+    "date": "2022-01-26",
+    "category": "Bitcoin",
+    "excerpt": "Hva ligger bak prisen til den mye omtalte kryptovalutaen og hva gjør at bitcoin skiller seg ut fra alle andre kryptovalutaer ?",
+    "content": "posts/hvorfor-bitcoin.html"
   }
 ]

@@ -20,7 +20,7 @@ CURRENT_DATE=$(date +%Y-%m-%d)
 
 # Define file paths
 POST_FILE="posts/${POST_SLUG}.html"
-TEMPLATE_FILE="posts/bitcoin-lightning-network.html"
+TEMPLATE_FILE="posts/welcome.html"
 
 # Check if post already exists
 if [ -f "$POST_FILE" ]; then
