@@ -44,6 +44,7 @@ server {
 ```
 
 **Reload Nginx:**
+
 ```bash
 sudo nginx -t
 sudo systemctl reload nginx
@@ -56,6 +57,7 @@ sudo systemctl reload nginx
 GitHub Pages automatically handles 404 pages!
 
 **Setup:**
+
 1. Push your code to GitHub
 2. Go to Settings → Pages
 3. Enable GitHub Pages
@@ -139,6 +141,7 @@ with socketserver.TCPServer(("", PORT), CustomHTTPRequestHandler) as httpd:
 ```
 
 **Run it:**
+
 ```bash
 chmod +x server.py
 ./server.py
@@ -170,6 +173,7 @@ After configuring your server, test the 404 page:
 3. You should see the custom 404 page with "Are you lost?" message
 
 **Test URLs:**
+
 - `http://localhost:3000/random-page`
 - `http://localhost:3000/posts/nonexistent.html`
 - `http://localhost:3000/category.html?cat=invalid`
@@ -192,11 +196,7 @@ Cloudflare Pages automatically uses `404.html`.
 {
   "hosting": {
     "public": ".",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",
@@ -208,6 +208,7 @@ Cloudflare Pages automatically uses `404.html`.
 ```
 
 **Deploy:**
+
 ```bash
 firebase deploy
 ```
@@ -216,17 +217,17 @@ firebase deploy
 
 ## Summary
 
-| Hosting Platform | Configuration Required |
-|------------------|------------------------|
-| **Apache** | ✅ Already configured (.htaccess) |
-| **Nginx** | 📝 Add to server config |
-| **GitHub Pages** | ✅ Automatic |
-| **Netlify** | ✅ Automatic |
-| **Vercel** | ✅ Automatic |
-| **Cloudflare Pages** | ✅ Automatic |
-| **Firebase** | 📝 Create firebase.json |
-| **Local (Python)** | 📝 Use custom server script |
-| **Local (http-server)** | 📝 Use -P flag |
+| Hosting Platform        | Configuration Required            |
+| ----------------------- | --------------------------------- |
+| **Apache**              | ✅ Already configured (.htaccess) |
+| **Nginx**               | 📝 Add to server config           |
+| **GitHub Pages**        | ✅ Automatic                      |
+| **Netlify**             | ✅ Automatic                      |
+| **Vercel**              | ✅ Automatic                      |
+| **Cloudflare Pages**    | ✅ Automatic                      |
+| **Firebase**            | 📝 Create firebase.json           |
+| **Local (Python)**      | 📝 Use custom server script       |
+| **Local (http-server)** | 📝 Use -P flag                    |
 
 ---
 

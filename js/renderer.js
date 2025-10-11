@@ -3,7 +3,7 @@
  * Handles rendering posts and categories to the DOM
  */
 
-import { formatDate } from './data-loader.js';
+import { formatDate } from "./data-loader.js";
 
 /**
  * Render posts to the DOM
@@ -11,20 +11,24 @@ import { formatDate } from './data-loader.js';
  * @param {HTMLElement} container - Container element to render into
  */
 export function renderPosts(posts, container) {
-    if (!posts || posts.length === 0) {
-        container.innerHTML = '<p>No posts available.</p>';
-        return;
-    }
+  if (!posts || posts.length === 0) {
+    container.innerHTML = "<p>No posts available.</p>";
+    return;
+  }
 
-    const postsHTML = posts.map(post => `
+  const postsHTML = posts
+    .map(
+      (post) => `
         <article class="post">
             <h3><a href="${post.content}">${escapeHtml(post.title)}</a></h3>
             <p class="date">${formatDate(post.date)}</p>
             <p>${escapeHtml(post.excerpt)}</p>
         </article>
-    `).join('');
+    `,
+    )
+    .join("");
 
-    container.innerHTML = postsHTML;
+  container.innerHTML = postsHTML;
 }
 
 /**
@@ -33,20 +37,24 @@ export function renderPosts(posts, container) {
  * @param {HTMLElement} container - Container element to render into
  */
 export function renderCategories(categories, container) {
-    if (!categories || categories.length === 0) {
-        container.innerHTML = '<p>No categories available.</p>';
-        return;
-    }
+  if (!categories || categories.length === 0) {
+    container.innerHTML = "<p>No categories available.</p>";
+    return;
+  }
 
-    const categoriesHTML = categories.map(category => `
+  const categoriesHTML = categories
+    .map(
+      (category) => `
         <li>
             <a href="category.html?cat=${encodeURIComponent(category.slug)}">
                 ${escapeHtml(category.name)}
             </a>
         </li>
-    `).join('');
+    `,
+    )
+    .join("");
 
-    container.innerHTML = categoriesHTML;
+  container.innerHTML = categoriesHTML;
 }
 
 /**
@@ -55,7 +63,7 @@ export function renderCategories(categories, container) {
  * @returns {string} Escaped text
  */
 function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
 }

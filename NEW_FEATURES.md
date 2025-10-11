@@ -7,16 +7,19 @@ This document summarizes all the new features and improvements added to your hom
 The site now automatically adapts to your system's color scheme preference!
 
 ### Light Mode
+
 - White background (#ffffff)
 - Black text (#0a0a0a)
 - Green accents (#00ff00)
 
 ### Dark Mode
+
 - Dark background (#0a0a0a)
 - Light text (#e0e0e0)
 - Bright green borders and accents (#00ff00)
 
 **How to test:**
+
 - Change your system appearance settings
 - The site will automatically switch themes
 - No user action required!
@@ -39,12 +42,14 @@ New command-line script to create blog posts quickly!
 ```
 
 **What it does:**
+
 1. Creates a new HTML file from the template
 2. Generates a URL-friendly slug automatically
 3. Sets the current date
 4. Shows you the next steps
 
 **Example:**
+
 ```bash
 ./new-post.sh "Understanding Bitcoin Taproot"
 # Creates: posts/understanding-bitcoin-taproot.html
@@ -63,12 +68,14 @@ Added a friendly custom 404 error page with automatic redirect configuration:
 - **Automatic redirects** for all non-existent pages
 
 **Files Added:**
+
 - `404.html` - Custom error page
 - `.htaccess` - Apache configuration (works automatically)
 - `server.py` - Python server with 404 support
 - `SERVER_CONFIG.md` - Configuration guide for all platforms
 
 **How it works:**
+
 - Visit any non-existent page → automatically shows 404.html
 - Works on Apache, Nginx, GitHub Pages, Netlify, Vercel, etc.
 - Local development uses `server.py` for 404 support
@@ -78,11 +85,13 @@ Added a friendly custom 404 error page with automatic redirect configuration:
 Built-in support for Nostr identity verification!
 
 **What is NIP-05?**
+
 - Links your Nostr identity to your domain
 - Provides a verified checkmark in Nostr clients
 - Format: `username@yourdomain.com`
 
 **Setup:**
+
 1. Edit `.well-known/nostr.json`
 2. Add your Nostr public key (hex format)
 3. List your preferred relays
@@ -91,6 +100,7 @@ Built-in support for Nostr identity verification!
 **File location:** `.well-known/nostr.json`
 
 Example:
+
 ```json
 {
   "names": {
@@ -108,6 +118,7 @@ Example:
 ## 🧹 Removed Grid Background
 
 Removed the cyberpunk grid background overlay for:
+
 - Cleaner appearance
 - Better readability
 - Reduced visual noise
@@ -119,6 +130,7 @@ Removed the cyberpunk grid background overlay for:
 ## ♿ Accessibility Improvements
 
 All changes maintain WCAG 2.1 compliance:
+
 - High contrast in both light and dark modes
 - No blinking or flashing animations
 - Proper color contrast ratios
@@ -130,16 +142,19 @@ All changes maintain WCAG 2.1 compliance:
 Added comprehensive documentation:
 
 ### CREATING_POSTS.md
+
 - Step-by-step guide for creating posts
 - HTML structure reference
 - Styling guidelines
 - Troubleshooting tips
 
 ### NEW_FEATURES.md (this file)
+
 - Summary of all new features
 - Quick reference for recent changes
 
 ### Updated README.md
+
 - Dark mode information
 - Post creation instructions
 - Nostr NIP-05 setup guide
@@ -148,6 +163,7 @@ Added comprehensive documentation:
 ## 🎨 Design Updates
 
 **Maintained:**
+
 - Monospace font (Courier New)
 - Clean geometric borders
 - Smooth hover transitions
@@ -155,6 +171,7 @@ Added comprehensive documentation:
 - Responsive design
 
 **Updated:**
+
 - Color scheme: cyan/magenta → green
 - Background: removed grid overlay
 - Theme: added dark mode support
@@ -178,6 +195,7 @@ homepage/
 ## 🔧 Modified Files
 
 **Updated for dark mode and green theme:**
+
 - `css/style.css` - Added dark mode, changed to green
 - `css/post.css` - Updated accent colors
 - `index.html` - Removed grid background div
@@ -188,16 +206,19 @@ homepage/
 ## 🚀 Quick Start
 
 1. **Create a new post:**
+
    ```bash
    ./new-post.sh "My First Post"
    ```
 
 2. **Edit the post:**
+
    ```bash
    nano posts/my-first-post.html
    ```
 
 3. **Add to posts.json:**
+
    ```json
    {
      "id": "my-first-post",

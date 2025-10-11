@@ -15,6 +15,11 @@
     "slug": "cryptography"
   },
   {
+    "id": "nix",
+    "name": "Nix",
+    "slug": "nix"
+  },
+  {
     "id": "blockchain",
     "name": "Blockchain",
     "slug": "blockchain"
@@ -38,5 +43,10 @@
     "id": "protocols",
     "name": "Protocols",
     "slug": "protocols"
+  },
+  {
+    "id": "general",
+    "name": "General",
+    "slug": "general"
   }
 ]

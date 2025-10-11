@@ -11,6 +11,7 @@ The easiest way to create a new post is using the `new-post.sh` script:
 ```
 
 This will:
+
 1. Create a new HTML file in the `posts/` directory
 2. Use your post title and current date
 3. Generate a URL-friendly slug
@@ -29,11 +30,13 @@ This creates: `posts/understanding-bitcoin-taproot.html`
 ### Step 1: Create the HTML File
 
 Run the script:
+
 ```bash
 ./new-post.sh "Your Amazing Post Title"
 ```
 
 Or manually copy the template:
+
 ```bash
 cp posts/bitcoin-lightning-network.html posts/your-post-slug.html
 ```
@@ -43,16 +46,19 @@ cp posts/bitcoin-lightning-network.html posts/your-post-slug.html
 Open `posts/your-post-slug.html` and update:
 
 1. **Title tag** (line 6):
+
 ```html
 <title>Your Post Title - Ruben Beck</title>
 ```
 
 2. **Post heading** (around line 31):
+
 ```html
 <h1>Your Post Title</h1>
 ```
 
 3. **Date and category** (around line 33-35):
+
 ```html
 <span class="date">October 11, 2025</span>
 <span class="category"><a href="../category.html?cat=bitcoin">Bitcoin</a></span>
@@ -77,7 +83,8 @@ Edit `data/posts.json` and add your post to the array:
 }
 ```
 
-**Important**: 
+**Important**:
+
 - Add a comma after the previous post entry
 - Match the category name exactly with one in `data/categories.json`
 - Use the same slug in the filename and `id` field
@@ -85,6 +92,7 @@ Edit `data/posts.json` and add your post to the array:
 ### Step 4: Test Your Post
 
 1. Start the server:
+
 ```bash
 ./start.sh
 ```
@@ -101,27 +109,27 @@ Edit `data/posts.json` and add your post to the array:
 
 ```html
 <div class="post-content">
-    <h2>Main Section Heading</h2>
-    <p>Your paragraph text here.</p>
+  <h2>Main Section Heading</h2>
+  <p>Your paragraph text here.</p>
 
-    <h3>Subsection Heading</h3>
-    <p>More text.</p>
+  <h3>Subsection Heading</h3>
+  <p>More text.</p>
 
-    <ul>
-        <li>List item 1</li>
-        <li>List item 2</li>
-    </ul>
+  <ul>
+    <li>List item 1</li>
+    <li>List item 2</li>
+  </ul>
 
-    <h2>Code Examples</h2>
-    <p>Here's some code:</p>
+  <h2>Code Examples</h2>
+  <p>Here's some code:</p>
 
-    <pre><code>function example() {
+  <pre><code>function example() {
   console.log('Hello, World!');
   return true;
 }</code></pre>
 
-    <h2>Links</h2>
-    <p>Check out <a href="https://example.com">this link</a>.</p>
+  <h2>Links</h2>
+  <p>Check out <a href="https://example.com">this link</a>.</p>
 </div>
 ```
 
@@ -130,7 +138,7 @@ Edit `data/posts.json` and add your post to the array:
 The following HTML elements are pre-styled:
 
 - `<h2>` - Major section headings with `##` prefix
-- `<h3>` - Subsection headings with `▸` prefix  
+- `<h3>` - Subsection headings with `▸` prefix
 - `<p>` - Regular paragraphs
 - `<ul>` / `<ol>` - Unordered and ordered lists
 - `<li>` - List items
@@ -141,17 +149,49 @@ The following HTML elements are pre-styled:
 
 ### Code Blocks
 
-For code examples, use:
+For code examples, use the `<pre>` tag with a language class for automatic language display:
 
 ```html
-<pre><code>// Your code here
-const bitcoin = true;</code></pre>
+<!-- JavaScript example -->
+<pre class="language-javascript"><code>const bitcoin = true;
+console.log('Hello, Bitcoin!');</code></pre>
+
+<!-- Python example -->
+<pre class="language-python"><code>def hello():
+    print("Hello, Bitcoin!")
+    return True</code></pre>
+```
+
+**Supported Languages:**
+The language name will be automatically displayed in the code block header!
+
+- `language-javascript` or `language-js` → "> JAVASCRIPT"
+- `language-python` or `language-py` → "> PYTHON"
+- `language-rust` or `language-rs` → "> RUST"
+- `language-bash` or `language-sh` → "> BASH"
+- `language-html` → "> HTML"
+- `language-css` → "> CSS"
+- `language-json` → "> JSON"
+- `language-typescript` or `language-ts` → "> TYPESCRIPT"
+- `language-go` → "> GO"
+- `language-c` → "> C"
+- `language-cpp` → "> C++"
+- `language-java` → "> JAVA"
+
+**If no language class is provided:**
+
+```html
+<pre><code>// Generic code block
+// Will show "> CODE"</code></pre>
 ```
 
 **Tips for code blocks**:
+
+- Always add a language class when possible (e.g., `class="language-python"`)
 - Escape HTML characters: `<` becomes `&lt;`, `>` becomes `&gt;`
 - Code blocks have good spacing (line-height: 2.0)
-- They're styled with green text on black background (Matrix style)
+- Always styled with green text on black background for maximum contrast
+- Black background works in both light and dark modes
 
 ## Categories
 
@@ -178,37 +218,44 @@ To add a new category, edit `data/categories.json`:
 
 ## Post Metadata Fields
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| `id` | Unique identifier (same as filename slug) | `"bitcoin-taproot"` |
-| `title` | Post title (shown in list and header) | `"Understanding Bitcoin Taproot"` |
-| `date` | Publication date (YYYY-MM-DD) | `"2025-10-11"` |
-| `category` | Category name (must match categories.json) | `"Bitcoin"` |
-| `excerpt` | Short description (shown on homepage) | `"A deep dive into..."` |
-| `content` | Path to HTML file | `"posts/bitcoin-taproot.html"` |
+| Field      | Description                                | Example                           |
+| ---------- | ------------------------------------------ | --------------------------------- |
+| `id`       | Unique identifier (same as filename slug)  | `"bitcoin-taproot"`               |
+| `title`    | Post title (shown in list and header)      | `"Understanding Bitcoin Taproot"` |
+| `date`     | Publication date (YYYY-MM-DD)              | `"2025-10-11"`                    |
+| `category` | Category name (must match categories.json) | `"Bitcoin"`                       |
+| `excerpt`  | Short description (shown on homepage)      | `"A deep dive into..."`           |
+| `content`  | Path to HTML file                          | `"posts/bitcoin-taproot.html"`    |
 
 ## Tips for Writing Posts
 
 ### 1. Use Clear Headings
+
 Structure your content with `<h2>` for main sections and `<h3>` for subsections.
 
 ### 2. Break Up Text
+
 Use short paragraphs (2-4 sentences) for better readability.
 
 ### 3. Add Code Examples
+
 Use `<pre><code>` blocks for code. They're well-spaced and easy to read.
 
 ### 4. Include Lists
+
 Use `<ul>` or `<ol>` to organize information:
+
 ```html
 <ul>
-    <li><strong>Point 1:</strong> Description</li>
-    <li><strong>Point 2:</strong> Description</li>
+  <li><strong>Point 1:</strong> Description</li>
+  <li><strong>Point 2:</strong> Description</li>
 </ul>
 ```
 
 ### 5. Link to Resources
+
 Add relevant links:
+
 ```html
 <p>For more information, see <a href="https://bitcoin.org">Bitcoin.org</a>.</p>
 ```
@@ -216,22 +263,26 @@ Add relevant links:
 ## Common Issues
 
 ### Post doesn't appear on homepage
+
 - Check that you added it to `data/posts.json`
 - Ensure JSON is valid (no missing commas, brackets)
 - Make sure the `content` path is correct
 
 ### Category filter not working
+
 - Category name in `posts.json` must exactly match one in `categories.json`
 - Category names are case-sensitive
 
 ### Broken styling
+
 - Make sure you included the CSS links in the `<head>`:
   ```html
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/post.css">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/post.css" />
   ```
 
 ### Code not displaying correctly
+
 - Escape HTML characters: `<` → `&lt;`, `>` → `&gt;`
 - Use `<pre><code>` wrapper for code blocks
 
@@ -240,6 +291,7 @@ Add relevant links:
 If you prefer to create posts manually:
 
 1. **Copy the template:**
+
    ```bash
    cp posts/bitcoin-lightning-network.html posts/my-new-post.html
    ```
@@ -251,6 +303,7 @@ If you prefer to create posts manually:
    - Replace all content
 
 3. **Add to data/posts.json:**
+
    ```json
    {
      "id": "my-new-post",

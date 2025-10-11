@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
   outputs =
@@ -12,6 +13,10 @@
       { lib, ... }:
       {
         systems = lib.systems.flakeExposed;
+        imports = [
+          inputs.treefmt-nix.flakeModule
+          ./nix/treefmt.nix
+        ];
         perSystem =
           { pkgs, ... }:
           {

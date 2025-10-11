@@ -3,6 +3,7 @@
 ## Running the Site
 
 ### Easiest Method
+
 ```bash
 ./start.sh
 ```
@@ -10,11 +11,12 @@
 Then open: `http://localhost:3000`
 
 ### Manual Methods
+
 ```bash
 # If you have pnpm
 pnpm install && pnpm start
 
-# If you have npm  
+# If you have npm
 npm install && npm start
 
 # If you have Python 3
@@ -27,7 +29,9 @@ php -S localhost:3000
 ## Quick Edits
 
 ### Change Your Name and Info
+
 Edit `index.html`:
+
 - Line 8: Page title
 - Line 13: Your name (appears in header)
 - Line 14: Your subtitle/title
@@ -36,6 +40,7 @@ Edit `index.html`:
 ### Add a New Blog Post
 
 1. **Copy the example post:**
+
 ```bash
 cp posts/bitcoin-lightning-network.html posts/my-new-post.html
 ```
@@ -47,6 +52,7 @@ cp posts/bitcoin-lightning-network.html posts/my-new-post.html
    - Replace all content in the `post-content` div
 
 3. **Add it to the data file** (`data/posts.json`):
+
 ```json
 {
   "id": "my-new-post",
@@ -61,6 +67,7 @@ cp posts/bitcoin-lightning-network.html posts/my-new-post.html
 ### Add a New Category
 
 Edit `data/categories.json`:
+
 ```json
 {
   "id": "my-category",
@@ -72,13 +79,14 @@ Edit `data/categories.json`:
 ### Change Colors
 
 Edit `css/style.css` - look for the `:root` section at the top:
+
 ```css
 :root {
-    --bg-primary: #ffffff;        /* Background color */
-    --text-primary: #0a0a0a;      /* Text color */
-    --accent-cyan: #00ffff;       /* Cyan accent */
-    --accent-magenta: #ff00ff;    /* Magenta accent */
-    --accent-green: #00ff00;      /* Green (for code) */
+  --bg-primary: #ffffff; /* Background color */
+  --text-primary: #0a0a0a; /* Text color */
+  --accent-cyan: #00ffff; /* Cyan accent */
+  --accent-magenta: #ff00ff; /* Magenta accent */
+  --accent-green: #00ff00; /* Green (for code) */
 }
 ```
 
@@ -116,32 +124,42 @@ homepage/
 ## Common Tasks
 
 ### Make Text Bigger
+
 Edit `css/style.css` and change the `font-size` in the `body` rule (around line 20).
 
 ### Change Font
-Edit `css/style.css` and change the `font-family` in the `body` rule. 
+
+Edit `css/style.css` and change the `font-family` in the `body` rule.
 Current: `'Courier New', Courier, monospace`
 Try: `'Arial', sans-serif` or `'Georgia', serif`
 
 ### Add Social Links
+
 Edit `index.html` in the contact section (around line 48):
+
 ```html
-<p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
+<p>
+  <strong>LinkedIn:</strong>
+  <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a>
+</p>
 ```
 
 ## Deployment
 
 ### GitHub Pages
+
 1. Push your code to GitHub
 2. Go to Settings → Pages
 3. Select branch: `main`
 4. Your site will be at: `https://yourusername.github.io/homepage`
 
 ### Netlify
+
 1. Drag and drop the `homepage` folder to netlify.com
 2. Your site is live!
 
 ### Any Static Host
+
 Just upload all files to any web hosting that serves static files.
 
 ## Need Help?

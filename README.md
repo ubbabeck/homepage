@@ -44,11 +44,13 @@ homepage/
 ### Option 1: Using pnpm (Recommended)
 
 1. Install dependencies:
+
 ```bash
 pnpm install
 ```
 
 2. Start the development server:
+
 ```bash
 pnpm start
 ```
@@ -58,11 +60,13 @@ The site will open automatically at `http://localhost:3000`
 ### Option 2: Using npm
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Start the development server:
+
 ```bash
 npm start
 ```
@@ -84,6 +88,7 @@ Then open `http://localhost:3000` in your browser.
 ### Option 4: Using any other local server
 
 You can use any local development server you prefer:
+
 - `php -S localhost:3000`
 - `ruby -run -e httpd . -p 3000`
 - VS Code Live Server extension
@@ -98,6 +103,7 @@ You can use any local development server you prefer:
 ### Updating Personal Information
 
 Edit `index.html` and update:
+
 - Your name in the `<h1>` tag
 - Your title/subtitle
 - Contact information in the contact section
@@ -111,6 +117,7 @@ Edit `index.html` and update:
 ```
 
 This command will:
+
 - Create a new HTML file from the template
 - Generate a URL-friendly slug
 - Show you the next steps
@@ -174,6 +181,7 @@ If your domain is `rubenbeck.com` and username is `ruben`, your NIP-05 would be:
 ### Adding Categories
 
 Edit `data/categories.json`:
+
 ```json
 {
   "id": "unique-id",
@@ -194,16 +202,19 @@ Edit `data/categories.json`:
 ### Modern Developer Aesthetic
 
 **Light Mode (Default):**
+
 - Clean white background with black text
 - Green accent color (#00ff00) for Matrix/terminal feel
 - High contrast for readability
 
 **Dark Mode (Automatic):**
+
 - Dark background (#0a0a0a) with light text
 - Bright green borders and accents
 - Adapts automatically to system preferences
 
 **Shared Design Elements:**
+
 - Monospace font (Courier New) for that terminal/code feel
 - Smooth hover transitions (no blinking)
 - Matrix-style code blocks with green text
@@ -241,24 +252,26 @@ MIT
 Edit these CSS variables in `css/style.css`:
 
 **Light Mode:**
+
 ```css
 :root {
-    --bg-primary: #ffffff;         /* Main background */
-    --bg-secondary: #fafafa;       /* Card backgrounds */
-    --text-primary: #0a0a0a;       /* Main text color */
-    --accent-primary: #00ff00;     /* Green accent */
-    --accent-secondary: #00cc00;   /* Darker green */
+  --bg-primary: #ffffff; /* Main background */
+  --bg-secondary: #fafafa; /* Card backgrounds */
+  --text-primary: #0a0a0a; /* Main text color */
+  --accent-primary: #00ff00; /* Green accent */
+  --accent-secondary: #00cc00; /* Darker green */
 }
 ```
 
 **Dark Mode:**
+
 ```css
 @media (prefers-color-scheme: dark) {
-    :root {
-        --bg-primary: #0a0a0a;     /* Dark background */
-        --text-primary: #e0e0e0;   /* Light text */
-        --border-primary: #00ff00; /* Green borders */
-    }
+  :root {
+    --bg-primary: #0a0a0a; /* Dark background */
+    --text-primary: #e0e0e0; /* Light text */
+    --border-primary: #00ff00; /* Green borders */
+  }
 }
 ```
 
@@ -281,20 +294,24 @@ The site automatically switches between light and dark mode based on system pref
 ## Troubleshooting
 
 **Posts not loading?**
+
 - Make sure you're running the dev server (`pnpm start`)
 - Check browser console for errors
 - Verify `data/posts.json` is valid JSON
 
 **Categories not working?**
+
 - Ensure category names in posts match category names exactly
 - Category filtering is case-insensitive
 
 **Styles not applying?**
+
 - Clear browser cache
 - Check that CSS files are in the `css/` folder
 - Verify paths in HTML `<link>` tags
 
 **404 page not showing?**
+
 - Check that `404.html` exists in the root directory
 - For Apache: `.htaccess` should be present
 - For other servers: See [SERVER_CONFIG.md](SERVER_CONFIG.md)
