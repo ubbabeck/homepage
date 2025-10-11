@@ -27,6 +27,7 @@
                 pkgs.python3
                 pkgs.nodejs
                 pkgs.prettier
+                pkgs.ffmpeg
               ];
             };
           };

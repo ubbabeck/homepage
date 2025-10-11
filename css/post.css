@@ -5,6 +5,21 @@
   padding: 40px;
 }
 
+/* Center all images in posts */
+.post-content img {
+  display: block;
+  margin: 30px auto;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--border-primary);
+  transition: all 0.3s ease;
+}
+
+.post-content img:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 20px var(--shadow-accent);
+}
+
 .post-header {
   margin-bottom: 40px;
   padding-bottom: 30px;
