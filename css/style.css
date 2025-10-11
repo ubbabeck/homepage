@@ -261,7 +261,7 @@ main {
 
 .pane h2::before {
   content: ">";
-  position: absolute;
+  position: relative;
   left: -5px;
   color: var(--accent-primary);
 }
