@@ -1,0 +1,12 @@
+{
+  "names": {
+    "ruben": "your-nostr-public-key-hex-here"
+  },
+  "relays": {
+    "your-nostr-public-key-hex-here": [
+      "wss://relay.damus.io",
+      "wss://relay.nostr.band",
+      "wss://nos.lol"
+    ]
+  }
+}

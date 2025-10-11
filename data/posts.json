@@ -1,0 +1,34 @@
+[
+  {
+    "id": "bitcoin-lightning-network",
+    "title": "Scaling Bitcoin: The Lightning Network Revolution",
+    "date": "2025-10-05",
+    "category": "Bitcoin",
+    "excerpt": "A deep dive into how the Lightning Network enables instant, low-fee Bitcoin transactions.",
+    "content": "posts/bitcoin-lightning-network.html"
+  },
+  {
+    "id": "understanding-cryptographic-signatures",
+    "title": "Understanding Cryptographic Signatures in Bitcoin",
+    "date": "2025-09-22",
+    "category": "Cryptography",
+    "excerpt": "An exploration of how digital signatures secure Bitcoin transactions.",
+    "content": "posts/cryptographic-signatures.html"
+  },
+  {
+    "id": "optimizing-blockchain-data",
+    "title": "Database Optimization for Blockchain Nodes",
+    "date": "2025-09-10",
+    "category": "Performance",
+    "excerpt": "Practical strategies for improving blockchain node performance and reducing query times.",
+    "content": "posts/blockchain-optimization.html"
+  },
+  {
+    "id": "bitcoin-code-review",
+    "title": "Code Review Practices in Bitcoin Core",
+    "date": "2025-08-28",
+    "category": "Software Engineering",
+    "excerpt": "Best practices for conducting thorough code reviews in critical Bitcoin infrastructure.",
+    "content": "posts/bitcoin-code-review.html"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "name": "developer-homepage",
+  "version": "1.0.0",
+  "description": "A simple developer blog with cyberpunk aesthetics",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/ --watch=.",
+    "start": "pnpm dev"
+  },
+  "keywords": [
+    "blog",
+    "portfolio"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

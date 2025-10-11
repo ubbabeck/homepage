@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            text-align: center;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px var(--shadow-accent);
+        }
+        
+        .error-message {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        .error-submessage {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+        
+        .home-link {
+            display: inline-block;
+            padding: 15px 30px;
+            border: 2px solid var(--border-primary);
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .home-link:hover {
+            background-color: var(--border-primary);
+            color: var(--bg-primary);
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 20px var(--shadow-accent);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <a href="index.html">Ruben Beck</a>
+            </h1>
+            <p class="subtitle">Bitcoin Developer & Protocol Engineer</p>
+        </header>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html#writings">Writings</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="error-container">
+                <div class="error-code">404</div>
+                <h2 class="error-message">Are you lost?</h2>
+                <p class="error-submessage">The page you're looking for doesn't exist.</p>
+                <a href="index.html" class="home-link">&larr; Go Home</a>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Ruben Beck. Decentralized. Trustless. Permissionless.</p>
+        </footer>
+    </div>
+</body>
+</html>

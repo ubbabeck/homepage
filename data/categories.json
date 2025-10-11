@@ -1,0 +1,42 @@
+[
+  {
+    "id": "bitcoin",
+    "name": "Bitcoin",
+    "slug": "bitcoin"
+  },
+  {
+    "id": "lightning",
+    "name": "Lightning Network",
+    "slug": "lightning"
+  },
+  {
+    "id": "cryptography",
+    "name": "Cryptography",
+    "slug": "cryptography"
+  },
+  {
+    "id": "blockchain",
+    "name": "Blockchain",
+    "slug": "blockchain"
+  },
+  {
+    "id": "performance",
+    "name": "Performance",
+    "slug": "performance"
+  },
+  {
+    "id": "software-engineering",
+    "name": "Software Engineering",
+    "slug": "software-engineering"
+  },
+  {
+    "id": "security",
+    "name": "Security",
+    "slug": "security"
+  },
+  {
+    "id": "protocols",
+    "name": "Protocols",
+    "slug": "protocols"
+  }
+]
