@@ -134,9 +134,9 @@
 }
 
 .post-content pre {
-  background-color: #000000;
-  color: var(--accent-code);
-  border: 2px solid var(--accent-primary);
+  background-color: var(--bg-accent);
+  color: var(--text-primary);
+  border: 2px solid var(--border-primary);
   padding: 25px;
   padding-top: 35px;
   margin: 40px 0;

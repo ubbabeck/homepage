@@ -22,16 +22,16 @@ function initThemeToggle() {
   // Apply saved theme or system preference
   if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
     document.body.classList.add("dark-mode");
-    themeIcon.textContent = "🌙";
+    themeIcon.textContent = "◐";
   } else {
     document.body.classList.remove("dark-mode");
-    themeIcon.textContent = "☀️";
+    themeIcon.textContent = "◑";
   }
 
   // Toggle theme on button click
   themeToggle.addEventListener("click", () => {
     const isDark = document.body.classList.toggle("dark-mode");
-    themeIcon.textContent = isDark ? "🌙" : "☀️";
+    themeIcon.textContent = isDark ? "◐" : "◑";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 }
