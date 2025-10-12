@@ -20,14 +20,9 @@
     "slug": "nix"
   },
   {
-    "id": "blockchain",
-    "name": "Blockchain",
-    "slug": "blockchain"
-  },
-  {
-    "id": "performance",
-    "name": "Performance",
-    "slug": "performance"
+    "id": "nostr",
+    "name": "Nostr",
+    "slug": "nostr"
   },
   {
     "id": "software-engineering",
@@ -38,11 +33,6 @@
     "id": "security",
     "name": "Security",
     "slug": "security"
-  },
-  {
-    "id": "protocols",
-    "name": "Protocols",
-    "slug": "protocols"
   },
   {
     "id": "general",
