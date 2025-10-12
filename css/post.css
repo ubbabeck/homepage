@@ -1,7 +1,7 @@
 /* Post-specific styles */
 .post-full {
   background-color: var(--bg-secondary);
-  border: 2px solid var(--border-primary);
+  border: 1px solid var(--border-primary);
   padding: 40px;
 }
 
@@ -11,7 +11,7 @@
   margin: 30px auto;
   max-width: 100%;
   height: auto;
-  border: 2px solid var(--border-primary);
+  border: 1px solid var(--border-primary);
   transition: all 0.3s ease;
 }
 
@@ -23,7 +23,7 @@
 .post-header {
   margin-bottom: 40px;
   padding-bottom: 30px;
-  border-bottom: 2px solid var(--border-secondary);
+  border-bottom: 1px solid var(--border-secondary);
 }
 
 .post-header h1 {
@@ -68,7 +68,7 @@
   margin-top: 40px;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--border-secondary);
+  border-bottom: 1px solid var(--border-secondary);
   letter-spacing: 1px;
   position: relative;
 }
@@ -136,7 +136,7 @@
 .post-content pre {
   background-color: var(--bg-accent);
   color: var(--text-primary);
-  border: 2px solid var(--border-primary);
+  border: 1px solid var(--border-primary);
   padding: 25px;
   padding-top: 35px;
   margin: 40px 0;
@@ -242,14 +242,14 @@
 .post-footer {
   margin-top: 50px;
   padding-top: 30px;
-  border-top: 2px solid var(--border-secondary);
+  border-top: 1px solid var(--border-secondary);
 }
 
 .back-link {
   display: inline-block;
   color: var(--text-primary);
   text-decoration: none;
-  border: 2px solid var(--border-primary);
+  border: 1px solid var(--border-primary);
   padding: 10px 20px;
   transition: all 0.3s ease;
   font-weight: 600;
