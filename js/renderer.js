@@ -17,15 +17,27 @@ export function renderPosts(posts, container) {
   }
 
   const postsHTML = posts
-    .map(
-      (post) => `
+    .map((post) => {
+      // Handle both string and array categories for backwards compatibility
+      const categories = Array.isArray(post.category)
+        ? post.category
+        : [post.category];
+      const categoriesHTML = categories
+        .map((cat) => {
+          const slug = cat.toLowerCase().replace(/\s+/g, "-");
+          return `<a href="category.html?cat=${encodeURIComponent(slug)}" class="category-tag">${escapeHtml(cat)}</a>`;
+        })
+        .join(" ");
+
+      return `
         <article class="post">
             <h3><a href="${post.content}">${escapeHtml(post.title)}</a></h3>
             <p class="date">${formatDate(post.date)}</p>
+            <div class="categories">${categoriesHTML}</div>
             <p>${escapeHtml(post.excerpt)}</p>
         </article>
-    `,
-    )
+    `;
+    })
     .join("");
 
   container.innerHTML = postsHTML;

@@ -3,7 +3,7 @@
     "id": "fuzzing-bitcoin-core-using-afl-on-nixos",
     "title": "Fuzzing bitcoin core using AFL++ on Nixos",
     "date": "2025-10-18",
-    "category": "Bitcoin",
+    "category": ["Bitcoin", "Nix", "Security"],
     "excerpt": "How to fuzz bitcoin core using AFL++",
     "content": "posts/fuzzing-bitcoin-core-using-afl-on-nixos.html"
   },
@@ -11,7 +11,7 @@
     "id": "welcome",
     "title": "welcome",
     "date": "2025-10-11",
-    "category": "General",
+    "category": ["General"],
     "excerpt": "Welcome to my homepage, content comming soon.",
     "content": "posts/welcome.html"
   },
@@ -19,7 +19,7 @@
     "id": "hvorfor-bitcoin",
     "title": "Hvorfor Bitcoin",
     "date": "2022-01-26",
-    "category": "Bitcoin",
+    "category": ["Bitcoin"],
     "excerpt": "Hva ligger bak prisen til den mye omtalte kryptovalutaen og hva gjør at bitcoin skiller seg ut fra alle andre kryptovalutaer ?",
     "content": "posts/hvorfor-bitcoin.html"
   }

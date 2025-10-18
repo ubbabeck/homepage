@@ -50,9 +50,15 @@ export function filterPostsByCategory(posts, category) {
     return posts;
   }
 
-  return posts.filter(
-    (post) => post.category.toLowerCase() === category.toLowerCase(),
-  );
+  return posts.filter((post) => {
+    // Handle both string and array categories for backwards compatibility
+    const categories = Array.isArray(post.category)
+      ? post.category
+      : [post.category];
+    return categories.some(
+      (cat) => cat.toLowerCase() === category.toLowerCase(),
+    );
+  });
 }
 
 /**
