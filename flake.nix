@@ -23,9 +23,9 @@
             packages.default = pkgs.mkShell {
               packages = [
                 pkgs.bashInteractive
+                pkgs.nodejs
                 pkgs.pnpm
                 pkgs.python3
-                pkgs.nodejs
                 pkgs.prettier
                 pkgs.ffmpeg
               ];

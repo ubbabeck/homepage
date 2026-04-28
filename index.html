@@ -18,41 +18,48 @@
       href="images/favicon-16.png"
     />
     <link rel="apple-touch-icon" href="images/profile.png" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="output.css" />
   </head>
-  <body>
-    <div class="container">
-      <header>
-        <div class="header-content">
-          <img src="images/profile.png" alt="Ruben Beck" class="profile-pic" />
-          <div class="header-text">
-            <h1>Ruben Beck</h1>
-            <p class="subtitle">Developer & Protocol Engineer</p>
+  <body class="font-mono bg-white text-black">
+    <div class="max-w-3xl mx-auto px-5 py-10">
+      <header class="mb-10 pb-5 border-b border-black">
+        <div class="flex gap-5 items-center">
+          <img
+            src="images/profile.png"
+            alt="Ruben Beck"
+            class="w-20 h-20 border border-black object-cover flex-shrink-0 transition-all duration-300 hover:shadow-md"
+          />
+          <div class="flex-1">
+            <h1 class="text-4xl font-bold uppercase tracking-widest mb-2">
+              Ruben Beck
+            </h1>
+            <p class="text-lg text-gray-700">Developer & Protocol Engineer</p>
           </div>
         </div>
       </header>
 
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#writings">Writings</a></li>
-          <li><a href="#categories">Categories</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <nav aria-label="Main navigation" class="mb-10">
+        <ul class="flex gap-8 flex-wrap">
+          <li><a href="#about" class="hover:text-gray-600 transition-colors">About</a></li>
+          <li><a href="#writings" class="hover:text-gray-600 transition-colors">Writings</a></li>
+          <li><a href="#categories" class="hover:text-gray-600 transition-colors">Categories</a></li>
+          <li><a href="#contact" class="hover:text-gray-600 transition-colors">Contact</a></li>
           <li>
             <a
               href="https://github.com/ubbabeck"
               target="_blank"
               rel="noopener noreferrer"
+              class="hover:text-gray-600 transition-colors"
               >Projects</a
             >
           </li>
         </ul>
       </nav>
 
-      <main>
-        <section id="about" class="pane">
-          <h2>About</h2>
-          <div class="content">
+      <main class="space-y-10">
+        <section id="about" class="mb-10 pb-6 border-b border-gray-300">
+          <h2 class="text-2xl font-bold mb-6 uppercase tracking-wide">About</h2>
+          <div class="space-y-4 text-gray-800 leading-relaxed">
             <p>
               I'm a developer focused on protocol development and layer 2
               solutions for bitcoin. My work centers on building secure,
@@ -76,25 +83,25 @@
           </div>
         </section>
 
-        <section id="writings" class="pane">
-          <h2>Writings</h2>
-          <div class="content" id="writings-list">
+        <section id="writings" class="mb-10 pb-6 border-b border-gray-300">
+          <h2 class="text-2xl font-bold mb-6 uppercase tracking-wide">Writings</h2>
+          <div class="space-y-4" id="writings-list">
             <!-- Posts will be loaded dynamically -->
           </div>
         </section>
 
-        <section id="categories" class="pane">
-          <h2>Categories</h2>
-          <div class="content">
-            <ul class="category-list" id="categories-list">
+        <section id="categories" class="mb-10 pb-6 border-b border-gray-300">
+          <h2 class="text-2xl font-bold mb-6 uppercase tracking-wide">Categories</h2>
+          <div>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4" id="categories-list">
               <!-- Categories will be loaded dynamically -->
             </ul>
           </div>
         </section>
 
-        <section id="contact" class="pane">
-          <h2>Contact</h2>
-          <div class="content">
+        <section id="contact" class="mb-10 pb-6 border-b border-gray-300">
+          <h2 class="text-2xl font-bold mb-6 uppercase tracking-wide">Contact</h2>
+          <div class="space-y-4 text-gray-800">
             <p>
               Always interested in Bitcoin protocol development and layer 2
               innovations.
@@ -105,14 +112,18 @@
               <strong>Hiring</strong>: Please email me or contact me on one of
               the following
             </p>
-            <div class="contact-links">
+            <div class="space-y-2">
               <p>
                 <strong>Email:</strong>
-                <a href="mailto:ruben.beck@pm.me">ruben.beck@pm.me</a>
+                <a href="mailto:ruben.beck@pm.me" class="text-blue-600 hover:text-blue-800 underline">ruben.beck@pm.me</a>
               </p>
               <p>
                 <strong>GitHub:</strong>
-                <a href="https://github.com/ubbabeck" target="_blank"
+                <a
+                  href="https://github.com/ubbabeck"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-blue-600 hover:text-blue-800 underline"
                   >github.com/ubbabeck</a
                 >
               </p>
@@ -121,6 +132,8 @@
                 <a
                   href="https://iris.to/npub140cxzp2qjrmc63audpaydmja0umpllcyd35p2ppmkdwmqw9275qqn6fma9"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-blue-600 hover:text-blue-800 underline"
                   >npub140cxzp2qjrmc63audpaydmja0umpllcyd35p2ppmkdwmqw9275qqn6fma9</a
                 >
               </p>
@@ -130,9 +143,11 @@
         </section>
       </main>
 
-      <footer>
-        Help people in countries that censor the internet access Tor. leave this
-        page open with snowflake turned on:<br />
+      <footer class="mt-10 pt-8 border-t border-gray-300 text-sm text-gray-700 space-y-4">
+        <p>
+          Help people in countries that censor the internet access Tor. leave this
+          page open with snowflake turned on:<br />
+        </p>
         <iframe
           src="https://snowflake.torproject.org/embed.html"
           width="320px"

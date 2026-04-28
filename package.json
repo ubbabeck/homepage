@@ -1,10 +1,11 @@
 {
   "name": "ruben-homepage",
   "version": "1.0.0",
-  "description": "A simple developer blog with cyberpunk aesthetics",
+  "description": "A simple developer blog with clean minimal design",
   "scripts": {
-    "dev": "live-server --port=3000 --open=/ --watch=.",
-    "start": "pnpm dev"
+    "build": "tailwindcss -i input.css -o output.css --minify",
+    "watch": "tailwindcss -i input.css -o output.css --watch",
+    "dev": "npm run watch"
   },
   "keywords": [
     "blog",
@@ -13,6 +14,6 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "tailwindcss": "^3.4.0"
   }
 }

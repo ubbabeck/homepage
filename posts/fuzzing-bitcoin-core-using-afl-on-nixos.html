@@ -18,38 +18,38 @@
       href="../images/favicon-16.png"
     />
     <link rel="apple-touch-icon" href="../images/profile.png" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/post.css" />
+    <link rel="stylesheet" href="../output.css" />
   </head>
-  <body>
-    <div class="container">
-      <header>
-        <div class="header-content">
+  <body class="font-mono bg-white text-black">
+    <div class="max-w-3xl mx-auto px-5 py-10">
+      <header class="mb-10 pb-5 border-b border-black">
+        <div class="flex gap-5 items-center">
           <img
             src="../images/profile.png"
             alt="Ruben Beck"
-            class="profile-pic"
+            class="w-20 h-20 border border-black object-cover flex-shrink-0 transition-all duration-300 hover:shadow-md"
           />
-          <div class="header-text">
-            <h1>
-              <a href="../index.html">Ruben Beck</a>
+          <div class="flex-1">
+            <h1 class="text-4xl font-bold uppercase tracking-widest mb-2">
+              <a href="../index.html" class="hover:text-gray-600 transition-colors">Ruben Beck</a>
             </h1>
-            <p class="subtitle">Bitcoin Developer & Protocol Engineer</p>
+            <p class="text-lg text-gray-700">Bitcoin Developer & Protocol Engineer</p>
           </div>
         </div>
       </header>
 
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="../index.html#about">About</a></li>
-          <li><a href="../index.html#writings">Writings</a></li>
-          <li><a href="../index.html#categories">Categories</a></li>
-          <li><a href="../index.html#contact">Contact</a></li>
+      <nav aria-label="Main navigation" class="mb-10">
+        <ul class="flex gap-8 flex-wrap">
+          <li><a href="../index.html#about" class="hover:text-gray-600 transition-colors">About</a></li>
+          <li><a href="../index.html#writings" class="hover:text-gray-600 transition-colors">Writings</a></li>
+          <li><a href="../index.html#categories" class="hover:text-gray-600 transition-colors">Categories</a></li>
+          <li><a href="../index.html#contact" class="hover:text-gray-600 transition-colors">Contact</a></li>
           <li>
             <a
               href="https://github.com/ubbabeck"
               target="_blank"
               rel="noopener noreferrer"
+              class="hover:text-gray-600 transition-colors"
               >Projects</a
             >
           </li>
@@ -57,68 +57,79 @@
       </nav>
 
       <main>
-        <article class="post-full">
-          <div class="post-header">
-            <h1>Fuzzing bitcoin core using AFL++ on Nixos</h1>
-            <div class="post-meta">
+        <article>
+          <div class="mb-8 pb-6 border-b border-gray-300">
+            <h1 class="text-4xl font-bold uppercase tracking-widest mb-2">Fuzzing bitcoin core using AFL++ on Nixos</h1>
+            <div class="flex gap-4 text-sm text-gray-600 flex-wrap">
               <span class="date">2025-10-18</span>
               <span class="separator">|</span>
-              <span class="category"
-                ><a href="../category.html?cat=bitcoin">Bitcoin</a></span
-              >
-              <span class="category"
-                ><a href="../category.html?cat=nix">Nix</a></span
-              >
-              <span class="category"
-                ><a href="../category.html?cat=security">Security</a></span
-              >
+              <span class="category">
+                <a href="../category.html?cat=bitcoin" class="text-blue-600 hover:text-blue-800 underline">Bitcoin</a>
+              </span>
+              <span class="category">
+                <a href="../category.html?cat=nix" class="text-blue-600 hover:text-blue-800 underline">Nix</a>
+              </span>
+              <span class="category">
+                <a href="../category.html?cat=security" class="text-blue-600 hover:text-blue-800 underline">Security</a>
+              </span>
             </div>
           </div>
 
-          <div class="post-content">
-            <h2>Introduction</h2>
-            <p>
-              This post was created in the aftermath of the bitcoin review club
-              <a href="https://bitcoincore.reviews/33300"
-                >https://bitcoincore.reviews/33300</a
-              >
-              and the pr
-              <a href="https://github.com/bitcoin/bitcoin/pull/33300"
-                >https://github.com/bitcoin/bitcoin/pull/33300</a
-              >, which I weren't able to attend but found the subject
-              interesting and since I've been sleeping on how to fuzz bitcoin
-              core and fuzzing in general.
-            </p>
-            <h2>What is fuzzing?</h2>
-            Taken from the bitcoin stackexchange answer
-            <a
-              href="https://bitcoin.stackexchange.com/questions/99955/what-is-fuzz-testing/99956#99956"
-              >https://bitcoin.stackexchange.com/questions/99955/what-is-fuzz-testing/99956#99956</a
-            >
-            fuzzing is defined as: <br /><br />
-            <blockquote cite="https://arxiv.org/pdf/1812.00140.pdf">
-              In the
-              <a href="https://arxiv.org/pdf/1812.00140.pdf">paper</a> "The Art,
-              Science and Engineering of Fuzzing the authors define fuzzing as
-              “a process of repeatedly running a program with generated inputs
-              that may be syntactically or semantically malformed”.
-            </blockquote>
-            <br />
-            <p>
-              As mentioned in the answer it is used both to prevent bugs and
-              discovering bugs in programs. Being ahead of an attacker as a well
-              as discovering limitations or alike in your program is where
-              fuzzing shines.
-            </p>
-            <h2>Simple nix flake for bitcoin core</h2>
-            <p>
-              For the purpose of compiling bitcoin core and start fuzzing i
-              created a simple `nix flake`, with the needed dependencies. This
-              flake can off-course be further enhanced, but for the purposes
-              this post it will do. The important once for fuzzing with afl++
-              are the following <q>aflplusplus</q>.
-            </p>
-            <pre class="nix"><code>
+          <div class="space-y-6 text-gray-800 leading-relaxed mb-8">
+            <div>
+              <h2 class="text-2xl font-bold uppercase tracking-wide mb-4">Introduction</h2>
+              <p>
+                This post was created in the aftermath of the bitcoin review club
+                <a href="https://bitcoincore.reviews/33300" class="text-blue-600 hover:text-blue-800 underline">
+                  https://bitcoincore.reviews/33300
+                </a>
+                and the pr
+                <a href="https://github.com/bitcoin/bitcoin/pull/33300" class="text-blue-600 hover:text-blue-800 underline">
+                  https://github.com/bitcoin/bitcoin/pull/33300
+                </a>
+                , which I weren't able to attend but found the subject
+                interesting and since I've been sleeping on how to fuzz bitcoin
+                core and fuzzing in general.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold uppercase tracking-wide mb-4">What is fuzzing?</h2>
+              <p>
+                Taken from the bitcoin stackexchange answer
+                <a href="https://bitcoin.stackexchange.com/questions/99955/what-is-fuzz-testing/99956#99956" class="text-blue-600 hover:text-blue-800 underline">
+                  https://bitcoin.stackexchange.com/questions/99955/what-is-fuzz-testing/99956#99956
+                </a>
+                fuzzing is defined as:
+              </p>
+
+              <blockquote class="border-l-4 border-gray-300 pl-4 italic text-gray-700 my-4">
+                In the
+                <a href="https://arxiv.org/pdf/1812.00140.pdf" class="text-blue-600 hover:text-blue-800 underline">paper</a> "The Art,
+                Science and Engineering of Fuzzing the authors define fuzzing as
+                "a process of repeatedly running a program with generated inputs
+                that may be syntactically or semantically malformed".
+              </blockquote>
+
+              <p>
+                As mentioned in the answer it is used both to prevent bugs and
+                discovering bugs in programs. Being ahead of an attacker as a well
+                as discovering limitations or alike in your program is where
+                fuzzing shines.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold uppercase tracking-wide mb-4">Simple nix flake for bitcoin core</h2>
+              <p>
+                For the purpose of compiling bitcoin core and start fuzzing i
+                created a simple `nix flake`, with the needed dependencies. This
+                flake can off-course be further enhanced, but for the purposes
+                this post it will do. The important once for fuzzing with afl++
+                are the following <q>aflplusplus</q>.
+              </p>
+
+              <pre class="bg-gray-100 border border-gray-300 rounded p-4 overflow-x-auto text-sm"><code>
 # This flake was initially generated by fh, the CLI for FlakeHub (version 0.1.10)
 {
 
@@ -191,12 +202,14 @@
       );
     };
 }
+              </code></pre>
+            </div>
 
-            </code></pre>
+            <div>
+              <h2 class="text-2xl font-bold uppercase tracking-wide mb-4">How to fuzz bitcoin core with Afl++</h2>
+              <p>If you haven't done this yet. Clone bitcoin core.</p>
 
-            <h2>How to fuzz bitcoin core with Afl++</h2>
-            <p>If you haven't done this yet. Clone bitcoin core.</p>
-            <pre class="language-bash"><code>
+              <pre class="bg-gray-100 border border-gray-300 rounded p-4 overflow-x-auto text-sm"><code>
 > git clone https://github.com/bitcoin/bitcoin
 # Compile bitcoin core with the corect afl++ compiler
 > cmake -B build_fuxx=afl-clang-lto DCMAKE_CXX_COMPILER=afl-clang-lto++ -DBUILD_FOR_FUZZING=ON
@@ -205,30 +218,33 @@
 > head -c 1000 /dev/urandom > inputs/input.dat
 # I had to add the -n flag 
 > FUZZ=cmpctblock afl-fuzz -n -i inputs -o outputs -- build_fuzz/bin/fuzz
-</code></pre>
-            <p>
-              Remember to also change the `FUZZ` variable depending on what you
-              want to fuzz, I'd also recommend to checkout
-              <a
-                href="https://github.com/bitcoin/bitcoin/blob/master/doc/fuzzing.md"
-                >bitcoin core's fuzzing docs</a
-              >
-              as it is most likely more up to date as well as
-              <a href="https://github.com/AFLplusplus/AFLplusplus">afl++ docs</a
-              >.
-            </p>
-            <img src="../images/afl_pluss_pluss.png" />
+              </code></pre>
+
+              <p>
+                Remember to also change the `FUZZ` variable depending on what you
+                want to fuzz, I'd also recommend to checkout
+                <a href="https://github.com/bitcoin/bitcoin/blob/master/doc/fuzzing.md" class="text-blue-600 hover:text-blue-800 underline">
+                  bitcoin core's fuzzing docs
+                </a>
+                as it is most likely more up to date as well as
+                <a href="https://github.com/AFLplusplus/AFLplusplus" class="text-blue-600 hover:text-blue-800 underline">afl++ docs</a>.
+              </p>
+
+              <img src="../images/afl_pluss_pluss.png" class="max-w-full h-auto my-4" alt="AFL++ output" />
+            </div>
           </div>
 
-          <div class="post-footer">
-            <a href="../index.html" class="back-link">&larr; Back to Home</a>
+          <div class="pt-4 border-t border-gray-300">
+            <a href="../index.html" class="text-blue-600 hover:text-blue-800 underline">&larr; Back to Home</a>
           </div>
         </article>
       </main>
 
-      <footer>
-        Help people in countries that censor the internet access Tor. Leave this
-        page open with Snowflake turned on:<br />
+      <footer class="mt-10 pt-8 border-t border-gray-300 text-sm text-gray-700 space-y-4">
+        <p>
+          Help people in countries that censor the internet access Tor. Leave this
+          page open with Snowflake turned on:<br />
+        </p>
         <iframe
           src="https://snowflake.torproject.org/embed.html"
           width="320px"
