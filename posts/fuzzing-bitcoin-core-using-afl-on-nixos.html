@@ -31,19 +31,49 @@
           />
           <div class="flex-1">
             <h1 class="text-4xl font-bold uppercase tracking-widest mb-2">
-              <a href="../index.html" class="hover:text-gray-600 transition-colors">Ruben Beck</a>
+              <a
+                href="../index.html"
+                class="hover:text-gray-600 transition-colors"
+                >Ruben Beck</a
+              >
             </h1>
-            <p class="text-lg text-gray-700">Bitcoin Developer & Protocol Engineer</p>
+            <p class="text-lg text-gray-700">
+              Bitcoin Developer & Protocol Engineer
+            </p>
           </div>
         </div>
       </header>
 
       <nav aria-label="Main navigation" class="mb-10">
         <ul class="flex gap-8 flex-wrap">
-          <li><a href="../index.html#about" class="hover:text-gray-600 transition-colors">About</a></li>
-          <li><a href="../index.html#writings" class="hover:text-gray-600 transition-colors">Writings</a></li>
-          <li><a href="../index.html#categories" class="hover:text-gray-600 transition-colors">Categories</a></li>
-          <li><a href="../index.html#contact" class="hover:text-gray-600 transition-colors">Contact</a></li>
+          <li>
+            <a
+              href="../index.html#about"
+              class="hover:text-gray-600 transition-colors"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="../index.html#writings"
+              class="hover:text-gray-600 transition-colors"
+              >Writings</a
+            >
+          </li>
+          <li>
+            <a
+              href="../index.html#categories"
+              class="hover:text-gray-600 transition-colors"
+              >Categories</a
+            >
+          </li>
+          <li>
+            <a
+              href="../index.html#contact"
+              class="hover:text-gray-600 transition-colors"
+              >Contact</a
+            >
+          </li>
           <li>
             <a
               href="https://github.com/ubbabeck"
@@ -59,32 +89,55 @@
       <main>
         <article>
           <div class="mb-8 pb-6 border-b border-gray-300">
-            <h1 class="text-4xl font-bold uppercase tracking-widest mb-2">Fuzzing bitcoin core using AFL++ on Nixos</h1>
+            <h1 class="text-4xl font-bold uppercase tracking-widest mb-2">
+              Fuzzing bitcoin core using AFL++ on Nixos
+            </h1>
             <div class="flex gap-4 text-sm text-gray-600 flex-wrap">
               <span class="date">2025-10-18</span>
               <span class="separator">|</span>
               <span class="category">
-                <a href="../category.html?cat=bitcoin" class="text-blue-600 hover:text-blue-800 underline">Bitcoin</a>
+                <a
+                  href="../category.html?cat=bitcoin"
+                  class="text-blue-600 hover:text-blue-800 underline"
+                  >Bitcoin</a
+                >
               </span>
               <span class="category">
-                <a href="../category.html?cat=nix" class="text-blue-600 hover:text-blue-800 underline">Nix</a>
+                <a
+                  href="../category.html?cat=nix"
+                  class="text-blue-600 hover:text-blue-800 underline"
+                  >Nix</a
+                >
               </span>
               <span class="category">
-                <a href="../category.html?cat=security" class="text-blue-600 hover:text-blue-800 underline">Security</a>
+                <a
+                  href="../category.html?cat=security"
+                  class="text-blue-600 hover:text-blue-800 underline"
+                  >Security</a
+                >
               </span>
             </div>
           </div>
 
           <div class="space-y-6 text-gray-800 leading-relaxed mb-8">
             <div>
-              <h2 class="text-2xl font-bold uppercase tracking-wide mb-4">Introduction</h2>
+              <h2 class="text-2xl font-bold uppercase tracking-wide mb-4">
+                Introduction
+              </h2>
               <p>
-                This post was created in the aftermath of the bitcoin review club
-                <a href="https://bitcoincore.reviews/33300" class="text-blue-600 hover:text-blue-800 underline">
+                This post was created in the aftermath of the bitcoin review
+                club
+                <a
+                  href="https://bitcoincore.reviews/33300"
+                  class="text-blue-600 hover:text-blue-800 underline"
+                >
                   https://bitcoincore.reviews/33300
                 </a>
                 and the pr
-                <a href="https://github.com/bitcoin/bitcoin/pull/33300" class="text-blue-600 hover:text-blue-800 underline">
+                <a
+                  href="https://github.com/bitcoin/bitcoin/pull/33300"
+                  class="text-blue-600 hover:text-blue-800 underline"
+                >
                   https://github.com/bitcoin/bitcoin/pull/33300
                 </a>
                 , which I weren't able to attend but found the subject
@@ -94,33 +147,47 @@
             </div>
 
             <div>
-              <h2 class="text-2xl font-bold uppercase tracking-wide mb-4">What is fuzzing?</h2>
+              <h2 class="text-2xl font-bold uppercase tracking-wide mb-4">
+                What is fuzzing?
+              </h2>
               <p>
                 Taken from the bitcoin stackexchange answer
-                <a href="https://bitcoin.stackexchange.com/questions/99955/what-is-fuzz-testing/99956#99956" class="text-blue-600 hover:text-blue-800 underline">
+                <a
+                  href="https://bitcoin.stackexchange.com/questions/99955/what-is-fuzz-testing/99956#99956"
+                  class="text-blue-600 hover:text-blue-800 underline"
+                >
                   https://bitcoin.stackexchange.com/questions/99955/what-is-fuzz-testing/99956#99956
                 </a>
                 fuzzing is defined as:
               </p>
 
-              <blockquote class="border-l-4 border-gray-300 pl-4 italic text-gray-700 my-4">
+              <blockquote
+                class="border-l-4 border-gray-300 pl-4 italic text-gray-700 my-4"
+              >
                 In the
-                <a href="https://arxiv.org/pdf/1812.00140.pdf" class="text-blue-600 hover:text-blue-800 underline">paper</a> "The Art,
-                Science and Engineering of Fuzzing the authors define fuzzing as
-                "a process of repeatedly running a program with generated inputs
-                that may be syntactically or semantically malformed".
+                <a
+                  href="https://arxiv.org/pdf/1812.00140.pdf"
+                  class="text-blue-600 hover:text-blue-800 underline"
+                  >paper</a
+                >
+                "The Art, Science and Engineering of Fuzzing the authors define
+                fuzzing as "a process of repeatedly running a program with
+                generated inputs that may be syntactically or semantically
+                malformed".
               </blockquote>
 
               <p>
                 As mentioned in the answer it is used both to prevent bugs and
-                discovering bugs in programs. Being ahead of an attacker as a well
-                as discovering limitations or alike in your program is where
-                fuzzing shines.
+                discovering bugs in programs. Being ahead of an attacker as a
+                well as discovering limitations or alike in your program is
+                where fuzzing shines.
               </p>
             </div>
 
             <div>
-              <h2 class="text-2xl font-bold uppercase tracking-wide mb-4">Simple nix flake for bitcoin core</h2>
+              <h2 class="text-2xl font-bold uppercase tracking-wide mb-4">
+                Simple nix flake for bitcoin core
+              </h2>
               <p>
                 For the purpose of compiling bitcoin core and start fuzzing i
                 created a simple `nix flake`, with the needed dependencies. This
@@ -129,7 +196,9 @@
                 are the following <q>aflplusplus</q>.
               </p>
 
-              <pre class="bg-gray-100 border border-gray-300 rounded p-4 overflow-x-auto text-sm"><code>
+              <pre
+                class="bg-gray-100 border border-gray-300 rounded p-4 overflow-x-auto text-sm"
+              ><code>
 # This flake was initially generated by fh, the CLI for FlakeHub (version 0.1.10)
 {
 
@@ -206,10 +275,14 @@
             </div>
 
             <div>
-              <h2 class="text-2xl font-bold uppercase tracking-wide mb-4">How to fuzz bitcoin core with Afl++</h2>
+              <h2 class="text-2xl font-bold uppercase tracking-wide mb-4">
+                How to fuzz bitcoin core with Afl++
+              </h2>
               <p>If you haven't done this yet. Clone bitcoin core.</p>
 
-              <pre class="bg-gray-100 border border-gray-300 rounded p-4 overflow-x-auto text-sm"><code>
+              <pre
+                class="bg-gray-100 border border-gray-300 rounded p-4 overflow-x-auto text-sm"
+              ><code>
 > git clone https://github.com/bitcoin/bitcoin
 # Compile bitcoin core with the corect afl++ compiler
 > cmake -B build_fuxx=afl-clang-lto DCMAKE_CXX_COMPILER=afl-clang-lto++ -DBUILD_FOR_FUZZING=ON
@@ -221,29 +294,46 @@
               </code></pre>
 
               <p>
-                Remember to also change the `FUZZ` variable depending on what you
-                want to fuzz, I'd also recommend to checkout
-                <a href="https://github.com/bitcoin/bitcoin/blob/master/doc/fuzzing.md" class="text-blue-600 hover:text-blue-800 underline">
+                Remember to also change the `FUZZ` variable depending on what
+                you want to fuzz, I'd also recommend to checkout
+                <a
+                  href="https://github.com/bitcoin/bitcoin/blob/master/doc/fuzzing.md"
+                  class="text-blue-600 hover:text-blue-800 underline"
+                >
                   bitcoin core's fuzzing docs
                 </a>
                 as it is most likely more up to date as well as
-                <a href="https://github.com/AFLplusplus/AFLplusplus" class="text-blue-600 hover:text-blue-800 underline">afl++ docs</a>.
+                <a
+                  href="https://github.com/AFLplusplus/AFLplusplus"
+                  class="text-blue-600 hover:text-blue-800 underline"
+                  >afl++ docs</a
+                >.
               </p>
 
-              <img src="../images/afl_pluss_pluss.png" class="max-w-full h-auto my-4" alt="AFL++ output" />
+              <img
+                src="../images/afl_pluss_pluss.png"
+                class="max-w-full h-auto my-4"
+                alt="AFL++ output"
+              />
             </div>
           </div>
 
           <div class="pt-4 border-t border-gray-300">
-            <a href="../index.html" class="text-blue-600 hover:text-blue-800 underline">&larr; Back to Home</a>
+            <a
+              href="../index.html"
+              class="text-blue-600 hover:text-blue-800 underline"
+              >&larr; Back to Home</a
+            >
           </div>
         </article>
       </main>
 
-      <footer class="mt-10 pt-8 border-t border-gray-300 text-sm text-gray-700 space-y-4">
+      <footer
+        class="mt-10 pt-8 border-t border-gray-300 text-sm text-gray-700 space-y-4"
+      >
         <p>
-          Help people in countries that censor the internet access Tor. Leave this
-          page open with Snowflake turned on:<br />
+          Help people in countries that censor the internet access Tor. Leave
+          this page open with Snowflake turned on:<br />
         </p>
         <iframe
           src="https://snowflake.torproject.org/embed.html"
