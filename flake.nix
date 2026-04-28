@@ -20,15 +20,48 @@
         perSystem =
           { pkgs, ... }:
           {
-            packages.default = pkgs.mkShell {
-              packages = [
-                pkgs.bashInteractive
-                pkgs.nodejs
-                pkgs.pnpm
-                pkgs.python3
-                pkgs.prettier
-                pkgs.ffmpeg
+            devShells.default = pkgs.mkShell {
+              packages = with pkgs; [
+                bashInteractive
+                nodejs
+                pnpm
+                python3
+                prettier
+                ffmpeg
+                just
+                nodePackages.tailwindcss
               ];
+
+              shellHook = ''
+                echo "Homepage development environment"
+                echo ""
+                echo "Available commands:"
+                just -l
+                echo ""
+              '';
+            };
+
+            packages.default = pkgs.stdenv.mkDerivation {
+              pname = "homepage";
+              version = "1.0.0";
+
+              src = ./.;
+
+              nativeBuildInputs = with pkgs; [
+                nodePackages.tailwindcss
+              ];
+
+              buildPhase = ''
+                mkdir -p $out
+
+                tailwindcss -i ./input.css -o $out/output.css --minify
+
+                cp -r index.html category.html posts js data images $out/
+              '';
+
+              installPhase = ''
+                echo "Website built successfully to $out"
+              '';
             };
           };
       }
