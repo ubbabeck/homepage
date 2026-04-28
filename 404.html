@@ -4,97 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 - Page Not Found</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <style>
-      .error-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 60vh;
-        text-align: center;
-      }
-
-      .error-code {
-        font-size: 8rem;
-        font-weight: 700;
-        color: var(--accent-primary);
-        line-height: 1;
-        margin-bottom: 20px;
-        text-shadow: 0 0 20px var(--shadow-accent);
-      }
-
-      .error-message {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        color: var(--text-primary);
-      }
-
-      .error-submessage {
-        font-size: 1.1rem;
-        color: var(--text-muted);
-        margin-bottom: 40px;
-      }
-
-      .home-link {
-        display: inline-block;
-        padding: 15px 30px;
-        border: 2px solid var(--border-primary);
-        background-color: var(--bg-secondary);
-        color: var(--text-primary);
-        text-decoration: none;
-        font-weight: 600;
-        letter-spacing: 1px;
-        transition: all 0.3s ease;
-      }
-
-      .home-link:hover {
-        background-color: var(--border-primary);
-        color: var(--bg-primary);
-        border-color: var(--accent-primary);
-        box-shadow: 0 0 20px var(--shadow-accent);
-      }
-    </style>
+    <link rel="stylesheet" href="output.css" />
   </head>
-  <body>
-    <div class="container">
-      <header>
-        <h1>
-          <a href="index.html">Ruben Beck</a>
+  <body class="font-mono bg-white text-black">
+    <div class="max-w-3xl mx-auto px-5 py-10">
+      <header class="mb-10 pb-5 border-b border-black">
+        <h1 class="text-4xl font-bold uppercase tracking-widest mb-2">
+          <a href="index.html" class="hover:text-gray-600 transition-colors">Ruben Beck</a>
         </h1>
-        <p class="subtitle">Bitcoin Developer & Protocol Engineer</p>
+        <p class="text-lg text-gray-700">Bitcoin Developer & Protocol Engineer</p>
       </header>
 
-      <nav aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html#writings">Writings</a></li>
-          <li><a href="index.html#categories">Categories</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+      <nav aria-label="Main navigation" class="mb-10">
+        <ul class="flex gap-8 flex-wrap">
+          <li><a href="index.html#writings" class="hover:text-gray-600 transition-colors">Writings</a></li>
+          <li><a href="index.html#categories" class="hover:text-gray-600 transition-colors">Categories</a></li>
+          <li><a href="index.html#contact" class="hover:text-gray-600 transition-colors">Contact</a></li>
           <li>
             <a
               href="https://github.com/ubbabeck"
               target="_blank"
               rel="noopener noreferrer"
+              class="hover:text-gray-600 transition-colors"
               >Projects</a
             >
           </li>
         </ul>
       </nav>
 
-      <main>
-        <div class="error-container">
-          <div class="error-code">404</div>
-          <h2 class="error-message">Are you lost?</h2>
-          <p class="error-submessage">
+      <main class="min-h-96 flex flex-col items-center justify-center text-center">
+        <div class="space-y-6">
+          <div class="text-8xl font-bold text-black leading-none mb-4">404</div>
+          <h2 class="text-2xl font-bold uppercase tracking-wide">Are you lost?</h2>
+          <p class="text-gray-700">
             The page you're looking for doesn't exist.
           </p>
-          <a href="index.html" class="home-link">&larr; Go Home</a>
+          <a href="index.html" class="inline-block px-8 py-4 border-2 border-black text-black hover:bg-black hover:text-white transition-all duration-300 font-semibold uppercase tracking-wide">
+            &larr; Go Home
+          </a>
         </div>
       </main>
 
-      <footer>
-        Help people in countries that censor the internet access Tor. Leave this
-        page open with Snowflake turned on:<br />
+      <footer class="mt-10 pt-8 border-t border-gray-300 text-sm text-gray-700 space-y-4">
+        <p>
+          Help people in countries that censor the internet access Tor. Leave this
+          page open with Snowflake turned on:<br />
+        </p>
         <iframe
           src="https://snowflake.torproject.org/embed.html"
           width="320px"
